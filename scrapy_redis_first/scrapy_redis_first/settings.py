@@ -14,7 +14,9 @@ NEWSPIDER_MODULE = 'scrapy_redis_first.spiders'
 
 DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
 SCHEDULER = "scrapy_redis.scheduler.Scheduler"
+# 如果分布的一台机器宕机了,继续爬虫时， 从上次失败的地方开始爬取，而不是从头爬取
 SCHEDULER_PERSIST = True
+# 下面这句可选: 保存redis的内容是中文
 REDIS_ITEMS_SERIALIZER = 'scrapy_redis_first.redis_encode.encode'
 
 ITEM_PIPELINES = {
